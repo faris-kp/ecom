@@ -42,6 +42,7 @@ INSTALLED_APPS = [
       
     #custom app
     'core',
+    'userauths',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,15 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+JAZZMIN_SETTINGS = {
+    
+    "site_header": "E-com Admin",
+    "site_brand": "EFS",
+    # "site_logo": "books/img/logo.png",
+     "copyright": "fariskp46820@gmail.com",
+}
+
+
+AUTH_USER_MODEL = 'userauths.User'
