@@ -4,6 +4,6 @@ from userauths.models import User
 
 
 class UserAdmin(admin.ModelAdmin):
-    list_display = ['username', 'email', 'bio']
+    list_display = ['username', 'email', 'bio'] # display this field's in admin panel
 
 admin.site.register(User,UserAdmin)
