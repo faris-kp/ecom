@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from userauths.forms import UserRegisterForm
 from django.contrib import messages
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 from userauths.models import User
 # from django.conf import settings
 
@@ -38,13 +38,15 @@ def register_view(request):
 def login_view(request):
     
     if request.user.is_authenticated:
-        pass
-        # messages.warning(request, f"Hey You are already logged in")
-        # return redirect("index")
+        messages.warning(request, f"Hey You are already logged in")
+        return redirect("index")
     
     if request.method == "POST":
+        print("user cheking in login ",request.user)
         email = request.POST.get("email")
         password = request.POST.get("password")
+        print("email cheking",email)
+        print("password",password)
         
         try:
             user = User.objects.get(email=email)
@@ -55,10 +57,10 @@ def login_view(request):
         
         if user is not None:
             login(request,user)
-            messages.success(request, "You are logged in")
+            messages.success(request, f"You logged in succesfully")
             return redirect("index")
         else:
-            messages.warning(request,"User does not exist ,create an account")
+            messages.warning(request,f"User does not exist ,create an account")
             
     context = {
         
@@ -66,4 +68,9 @@ def login_view(request):
     
     return render(request,"userauths/sign-in.html",context)
             
-        
+def logout_view(request):
+    print("Entered into logout view")
+    
+    logout(request)
+    messages.success(request, f"You are logged out ")
+    return redirect("userauths:sign-in")
