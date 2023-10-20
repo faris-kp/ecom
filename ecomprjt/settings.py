@@ -142,6 +142,9 @@ JAZZMIN_SETTINGS = {
     "site_brand": "EFS",
     # "site_logo": "books/img/logo.png",
      "copyright": "fariskp46820@gmail.com",
+    #  "menu_order": [
+    #     {"app": "core", "models": ["Products", "ProductImages", "Product","CartOrder","CartOrderItems","ProductReview", "Wishlist", "Address"]},
+    # ],
 }
 
 

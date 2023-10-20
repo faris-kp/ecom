@@ -2088,17 +2088,18 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     flex-shrink: 0
 }
 
-.product-card__image a {
+/* .product-card__image a {
     display: block;
     padding-bottom: 100%;
     position: relative
-}
+} */
 
 .product-card__image img {
-    max-width: 100%;
-    display: block;
-    position: absolute
+    width: 200px; /* Set the desired width */
+    height: 200px; /* Set the desired height */
+    object-fit: cover; /* Maintain aspect ratio and cover container */
 }
+
 
 .product-card__quickview {
     z-index: 2;
@@ -2301,7 +2302,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 .product-card__badge--new {
-    background: #37f;
+    background: rgb(255, 99, 51);
     color: #fff
 }
 

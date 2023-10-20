@@ -77,18 +77,19 @@ class Vendor(models.Model):
 class Product(models.Model):
     pid = ShortUUIDField(unique = True , length =10 , max_length = 20  ,alphabet ="abcdefgh12345")
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    vendor = models.ForeignKey(Vendor, on_delete=models.SET_NULL, null=True)
     Category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=100,default="Fresh")
     image = models.ImageField(upload_to="category",default="product.jpg")
     decription  = models.TextField(null=True, blank=True, default="This is the product")
     
     
-    price = models.DecimalField(max_digits=9999999999,decimal_places=2, default="1.99")
-    old_price = models.DecimalField(max_digits=9999999999,decimal_places=2, default="2.99")
+    price = models.DecimalField(max_digits=999,decimal_places=2, default="1.99")
+    old_price = models.DecimalField(max_digits=999,decimal_places=2, default="2.99")
     
     specification = models.TextField(null=True,blank=True)
     
-    tags = models.ForeignKey(Tags,on_delete=models.SET_NULL,null=True)
+    # tags = models.ForeignKey(Tags,on_delete=models.SET_NULL,null=True)
     product_status = models.CharField(choices=STATUS,max_length=10,default="in_review")
     status = models.BooleanField(default=True)
     in_stock = models.BooleanField(default=True)
@@ -128,7 +129,7 @@ class ProductImages(models.Model):
 
 class CartOrder(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
-    price = models.DecimalField(max_digits=9999999999,decimal_places=2, default="1.99")
+    price = models.DecimalField(max_digits=999,decimal_places=2, default="1.99")
     paid_status = models.BooleanField(default=False)
     order_date = models.DateTimeField(auto_now_add=True)
     product_status = models.CharField(choices=STATUS_CHOICE,max_length=30,default="Processing")
@@ -145,8 +146,8 @@ class CartOrderItems(models.Model):
     item = models.CharField(max_length=200)
     image = models.CharField(max_length=200)
     qty = models.IntegerField(default=0)
-    price = models.DecimalField(max_digits=9999999999,decimal_places=2, default="1.99")
-    total = models.DecimalField(max_digits=9999999999,decimal_places=2, default="1.99")
+    price = models.DecimalField(max_digits=999,decimal_places=2, default="1.99")
+    total = models.DecimalField(max_digits=999,decimal_places=2, default="1.99")
     
         
     class Meta:
@@ -184,7 +185,7 @@ class Wishlist(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     
     class Meta:
-        verbose_name_plural = "Wishlists"
+        verbose_name_plural ="Wishlists"
 
     def __str__(self):
         return self.product.title
