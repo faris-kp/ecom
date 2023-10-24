@@ -56,6 +56,9 @@ h3 {
     font-size: 28px
 }
 
+/* my adding -custom slide */
+
+/* end of custom slide */
 h3,
 h4 {
     font-weight: 700
@@ -3323,6 +3326,7 @@ screen and (-ms-high-contrast:active) {
     position: absolute;
     background: #3d464d;
     box-shadow: none;
+    height:50%;
     border-radius: 2px
 }
 
@@ -3356,6 +3360,7 @@ screen and (-ms-high-contrast:active) {
 .departments__item--menu {
     position: relative
 }
+
 
 .departments__link-arrow {
     right: 14px;
