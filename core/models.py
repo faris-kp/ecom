@@ -51,7 +51,6 @@ class Vendor(models.Model):
     title = models.CharField(max_length=100,default="Nesto")
     image = models.ImageField(upload_to="category",default="vendor.jpg")
     decription  = models.TextField(null=True, blank=True, default="I am  an amazing vendor")
-    
     address = models.CharField(max_length=200, default="123 Street Road")
     contact = models.CharField(max_length=100,default="+91-000000")
     chat_resp_time = models.CharField(max_length=100, default="100")
@@ -59,6 +58,7 @@ class Vendor(models.Model):
     authentic_rating = models.CharField(max_length=100, default="100")
     days_return= models.CharField(max_length=100, default="100")
     warranty_period = models.CharField(max_length=100, default="100")
+    date = models.DateTimeField(auto_now_add=True,null=True,blank=True)
     
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     
@@ -77,8 +77,8 @@ class Vendor(models.Model):
 class Product(models.Model):
     pid = ShortUUIDField(unique = True , length =10 , max_length = 20  ,alphabet ="abcdefgh12345")
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    vendor = models.ForeignKey(Vendor, on_delete=models.SET_NULL, null=True)
-    Category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    vendor = models.ForeignKey(Vendor, on_delete=models.SET_NULL, null=True,related_name = "vendor")
+    Category = models.ForeignKey(Category, on_delete=models.SET_NULL,null=True,related_name="category")
     title = models.CharField(max_length=100,default="Fresh")
     image = models.ImageField(upload_to="category",default="product.jpg")
     decription  = models.TextField(null=True, blank=True, default="This is the product")

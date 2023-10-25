@@ -7,7 +7,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("",views.index,name="index"),
     path("products/",views.product_list_view, name="products"),
-    path("products/category/<cid>",views.category_product_list_view, name="category-list")
+    path("products/category/<cid>",views.category_product_list_view, name="category-list"),
+    path("vendors/",views.vedor_list_view, name = "vendor-list")
 ]
 
 if settings.DEBUG:

@@ -57,7 +57,16 @@ h3 {
 }
 
 /* my adding -custom slide */
-
+.link {
+    text-decoration: none; /* Remove underline */
+    color: black; /* Change the text color to black */
+  }
+  
+  .link:hover {
+    text-decoration: underline; /* Add underline on hover (optional) */
+    color: blue; /* Change the text color to blue on hover */
+  }
+  
 /* end of custom slide */
 h3,
 h4 {
@@ -2088,8 +2097,11 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .product-card__image {
     padding: 18px;
     -ms-flex-negative: 0;
-    flex-shrink: 0
+    flex-shrink: 0;
+    
+      
 }
+
 
 /* .product-card__image a {
     display: block;
@@ -2191,11 +2203,12 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .product-card__name a {
     color: inherit;
-    transition: .15s
+    transition: .15s ;
 }
 
 .product-card__name a:hover {
-    color: #1a66ff
+    text-decoration: none;
+    color: inherit;
 }
 
 .product-card__rating {

@@ -1,0 +1,598 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+<div id="quickview-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content"></div>
+        </div>
+    </div><!-- quickview-modal / end --><!-- mobilemenu -->
+    <div class="mobilemenu">
+        <div class="mobilemenu__backdrop"></div>
+        <div class="mobilemenu__body">
+            <div class="mobilemenu__header">
+                <div class="mobilemenu__title">Menu</div><button type="button" class="mobilemenu__close"><svg
+                        width="20px" height="20px">
+                        <use xlink:href="images/sprite.svg#cross-20"></use>
+                    </svg></button>
+            </div>
+            <div class="mobilemenu__content">
+                <ul class="mobile-links mobile-links--level--0" data-collapse
+                    data-collapse-opened-class="mobile-links__item--open">
+                    <li class="mobile-links__item" data-collapse-item>
+                        <div class="mobile-links__item-title"><a href="index.html"
+                                class="mobile-links__item-link">Home</a> <button class="mobile-links__item-toggle"
+                                type="button" data-collapse-trigger><svg class="mobile-links__item-arrow" width="12px"
+                                    height="7px">
+                                    <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                </svg></button></div>
+                        <div class="mobile-links__item-sub-links" data-collapse-content>
+                            <ul class="mobile-links mobile-links--level--1">
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="index.html"
+                                            class="mobile-links__item-link">Home 1</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="index-2.html"
+                                            class="mobile-links__item-link">Home 2</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mobile-links__item" data-collapse-item>
+                        <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">Categories</a>
+                            <button class="mobile-links__item-toggle" type="button" data-collapse-trigger><svg
+                                    class="mobile-links__item-arrow" width="12px" height="7px">
+                                    <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                </svg></button></div>
+                        <div class="mobile-links__item-sub-links" data-collapse-content>
+                            <ul class="mobile-links mobile-links--level--1">
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="#"
+                                            class="mobile-links__item-link">Power Tools</a> <button
+                                            class="mobile-links__item-toggle" type="button" data-collapse-trigger><svg
+                                                class="mobile-links__item-arrow" width="12px" height="7px">
+                                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                            </svg></button></div>
+                                    <div class="mobile-links__item-sub-links" data-collapse-content>
+                                        <ul class="mobile-links mobile-links--level--2">
+                                            <li class="mobile-links__item" data-collapse-item>
+                                                <div class="mobile-links__item-title"><a href="#"
+                                                        class="mobile-links__item-link">Engravers</a></div>
+                                            </li>
+                                            <li class="mobile-links__item" data-collapse-item>
+                                                <div class="mobile-links__item-title"><a href="#"
+                                                        class="mobile-links__item-link">Wrenches</a></div>
+                                            </li>
+                                            <li class="mobile-links__item" data-collapse-item>
+                                                <div class="mobile-links__item-title"><a href="#"
+                                                        class="mobile-links__item-link">Wall Chaser</a></div>
+                                            </li>
+                                            <li class="mobile-links__item" data-collapse-item>
+                                                <div class="mobile-links__item-title"><a href="#"
+                                                        class="mobile-links__item-link">Pneumatic Tools</a></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="#"
+                                            class="mobile-links__item-link">Machine Tools</a> <button
+                                            class="mobile-links__item-toggle" type="button" data-collapse-trigger><svg
+                                                class="mobile-links__item-arrow" width="12px" height="7px">
+                                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                            </svg></button></div>
+                                    <div class="mobile-links__item-sub-links" data-collapse-content>
+                                        <ul class="mobile-links mobile-links--level--2">
+                                            <li class="mobile-links__item" data-collapse-item>
+                                                <div class="mobile-links__item-title"><a href="#"
+                                                        class="mobile-links__item-link">Thread Cutting</a></div>
+                                            </li>
+                                            <li class="mobile-links__item" data-collapse-item>
+                                                <div class="mobile-links__item-title"><a href="#"
+                                                        class="mobile-links__item-link">Chip Blowers</a></div>
+                                            </li>
+                                            <li class="mobile-links__item" data-collapse-item>
+                                                <div class="mobile-links__item-title"><a href="#"
+                                                        class="mobile-links__item-link">Sharpening Machines</a></div>
+                                            </li>
+                                            <li class="mobile-links__item" data-collapse-item>
+                                                <div class="mobile-links__item-title"><a href="#"
+                                                        class="mobile-links__item-link">Pipe Cutters</a></div>
+                                            </li>
+                                            <li class="mobile-links__item" data-collapse-item>
+                                                <div class="mobile-links__item-title"><a href="#"
+                                                        class="mobile-links__item-link">Slotting machines</a></div>
+                                            </li>
+                                            <li class="mobile-links__item" data-collapse-item>
+                                                <div class="mobile-links__item-title"><a href="#"
+                                                        class="mobile-links__item-link">Lathes</a></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mobile-links__item" data-collapse-item>
+                        <div class="mobile-links__item-title"><a href="shop-grid-3-columns-sidebar.html"
+                                class="mobile-links__item-link">Shop</a> <button class="mobile-links__item-toggle"
+                                type="button" data-collapse-trigger><svg class="mobile-links__item-arrow" width="12px"
+                                    height="7px">
+                                    <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                </svg></button></div>
+                        <div class="mobile-links__item-sub-links" data-collapse-content>
+                            <ul class="mobile-links mobile-links--level--1">
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="shop-grid-3-columns-sidebar.html"
+                                            class="mobile-links__item-link">Shop Grid</a> <button
+                                            class="mobile-links__item-toggle" type="button" data-collapse-trigger><svg
+                                                class="mobile-links__item-arrow" width="12px" height="7px">
+                                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                            </svg></button></div>
+                                    <div class="mobile-links__item-sub-links" data-collapse-content>
+                                        <ul class="mobile-links mobile-links--level--2">
+                                            <li class="mobile-links__item" data-collapse-item>
+                                                <div class="mobile-links__item-title"><a
+                                                        href="shop-grid-3-columns-sidebar.html"
+                                                        class="mobile-links__item-link">3 Columns Sidebar</a></div>
+                                            </li>
+                                            <li class="mobile-links__item" data-collapse-item>
+                                                <div class="mobile-links__item-title"><a
+                                                        href="shop-grid-4-columns-full.html"
+                                                        class="mobile-links__item-link">4 Columns Full</a></div>
+                                            </li>
+                                            <li class="mobile-links__item" data-collapse-item>
+                                                <div class="mobile-links__item-title"><a
+                                                        href="shop-grid-5-columns-full.html"
+                                                        class="mobile-links__item-link">5 Columns Full</a></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="shop-list.html"
+                                            class="mobile-links__item-link">Shop List</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="shop-right-sidebar.html"
+                                            class="mobile-links__item-link">Shop Right Sidebar</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="product.html"
+                                            class="mobile-links__item-link">Product</a> <button
+                                            class="mobile-links__item-toggle" type="button" data-collapse-trigger><svg
+                                                class="mobile-links__item-arrow" width="12px" height="7px">
+                                                <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                            </svg></button></div>
+                                    <div class="mobile-links__item-sub-links" data-collapse-content>
+                                        <ul class="mobile-links mobile-links--level--2">
+                                            <li class="mobile-links__item" data-collapse-item>
+                                                <div class="mobile-links__item-title"><a href="product.html"
+                                                        class="mobile-links__item-link">Product</a></div>
+                                            </li>
+                                            <li class="mobile-links__item" data-collapse-item>
+                                                <div class="mobile-links__item-title"><a href="product-alt.html"
+                                                        class="mobile-links__item-link">Product Alt</a></div>
+                                            </li>
+                                            <li class="mobile-links__item" data-collapse-item>
+                                                <div class="mobile-links__item-title"><a href="product-sidebar.html"
+                                                        class="mobile-links__item-link">Product Sidebar</a></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="cart.html"
+                                            class="mobile-links__item-link">Cart</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="checkout.html"
+                                            class="mobile-links__item-link">Checkout</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="wishlist.html"
+                                            class="mobile-links__item-link">Wishlist</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="compare.html"
+                                            class="mobile-links__item-link">Compare</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="account.html"
+                                            class="mobile-links__item-link">My Account</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="track-order.html"
+                                            class="mobile-links__item-link">Track Order</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mobile-links__item" data-collapse-item>
+                        <div class="mobile-links__item-title"><a href="blog-classic.html"
+                                class="mobile-links__item-link">Blog</a> <button class="mobile-links__item-toggle"
+                                type="button" data-collapse-trigger><svg class="mobile-links__item-arrow" width="12px"
+                                    height="7px">
+                                    <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                </svg></button></div>
+                        <div class="mobile-links__item-sub-links" data-collapse-content>
+                            <ul class="mobile-links mobile-links--level--1">
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="blog-classic.html"
+                                            class="mobile-links__item-link">Blog Classic</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="blog-grid.html"
+                                            class="mobile-links__item-link">Blog Grid</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="blog-list.html"
+                                            class="mobile-links__item-link">Blog List</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="blog-left-sidebar.html"
+                                            class="mobile-links__item-link">Blog Left Sidebar</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="post.html"
+                                            class="mobile-links__item-link">Post Page</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="post-without-sidebar.html"
+                                            class="mobile-links__item-link">Post Without Sidebar</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mobile-links__item" data-collapse-item>
+                        <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">Pages</a>
+                            <button class="mobile-links__item-toggle" type="button" data-collapse-trigger><svg
+                                    class="mobile-links__item-arrow" width="12px" height="7px">
+                                    <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                </svg></button></div>
+                        <div class="mobile-links__item-sub-links" data-collapse-content>
+                            <ul class="mobile-links mobile-links--level--1">
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="about-us.html"
+                                            class="mobile-links__item-link">About Us</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="contact-us.html"
+                                            class="mobile-links__item-link">Contact Us</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="contact-us-alt.html"
+                                            class="mobile-links__item-link">Contact Us Alt</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="404.html"
+                                            class="mobile-links__item-link">404</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="terms-and-conditions.html"
+                                            class="mobile-links__item-link">Terms And Conditions</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="faq.html"
+                                            class="mobile-links__item-link">FAQ</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="components.html"
+                                            class="mobile-links__item-link">Components</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="typography.html"
+                                            class="mobile-links__item-link">Typography</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mobile-links__item" data-collapse-item>
+                        <div class="mobile-links__item-title"><a data-collapse-trigger
+                                class="mobile-links__item-link">Currency</a> <button class="mobile-links__item-toggle"
+                                type="button" data-collapse-trigger><svg class="mobile-links__item-arrow" width="12px"
+                                    height="7px">
+                                    <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                </svg></button></div>
+                        <div class="mobile-links__item-sub-links" data-collapse-content>
+                            <ul class="mobile-links mobile-links--level--1">
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">€
+                                            Euro</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">£
+                                            Pound Sterling</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">$
+                                            US Dollar</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="#" class="mobile-links__item-link">₽
+                                            Russian Ruble</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mobile-links__item" data-collapse-item>
+                        <div class="mobile-links__item-title"><a data-collapse-trigger
+                                class="mobile-links__item-link">Language</a> <button class="mobile-links__item-toggle"
+                                type="button" data-collapse-trigger><svg class="mobile-links__item-arrow" width="12px"
+                                    height="7px">
+                                    <use xlink:href="images/sprite.svg#arrow-rounded-down-12x7"></use>
+                                </svg></button></div>
+                        <div class="mobile-links__item-sub-links" data-collapse-content>
+                            <ul class="mobile-links mobile-links--level--1">
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="#"
+                                            class="mobile-links__item-link">English</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="#"
+                                            class="mobile-links__item-link">French</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="#"
+                                            class="mobile-links__item-link">German</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="#"
+                                            class="mobile-links__item-link">Russian</a></div>
+                                </li>
+                                <li class="mobile-links__item" data-collapse-item>
+                                    <div class="mobile-links__item-title"><a href="#"
+                                            class="mobile-links__item-link">Italian</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div><!-- mobilemenu / end --><!-- site -->
+   
+            <div class="page-header">
+                <div class="page-header__container container">
+                    <div class="page-header__breadcrumb">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url "index" %}">Home</a> <svg class="breadcrumb-arrow"
+                                        width="6px" height="9px">
+                                        <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                    </svg></li>
+                                <li class="breadcrumb-item"><a href="#">Vendors</a> <svg class="breadcrumb-arrow"
+                                        width="6px" height="9px">
+                                        <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
+                                    </svg></li>
+                               
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="page-header__title">
+                        <h1>All Vendors</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="shop-layout shop-layout--sidebar--start">
+                 <!-- sidebar  location  not added  -->
+                    <div class="shop-layout__content">
+                        <div class="block">
+                            <div class="products-view">
+                                <div class="products-view__options">
+                                    <div class="view-options">
+                                        <div class="view-options__layout">
+                                            <div class="layout-switcher">
+                                                <div class="layout-switcher__list"> <button data-layout="list"
+                                                        data-with-features="false" title="List" type="button"
+                                                        class="layout-switcher__button layout-switcher__button--active"><svg
+                                                            width="16px" height="16px">
+                                                            <use xlink:href="images/sprite.svg#layout-list-16x16"></use>
+                                                        </svg></button></div>
+                                            </div>
+                                        </div>
+                                        <div class="view-options__legend">Showing {{ vendors.count }} Vendor{{ vendors.count|pluralize }}</div>
+                                        <div class="view-options__divider"></div>
+                                        <div class="view-options__control"><label for="">Sort By</label>
+                                            <div><select class="form-control form-control-sm" name="" id="">
+                                                    <option value="">Default</option>
+                                                    <option value="">Name (A-Z)</option>
+                                                </select></div>
+                                        </div>
+                                        <div class="view-options__control"><label for="">Show</label>
+                                            <div><select class="form-control form-control-sm" name="" id="">
+                                                    <option value="">12</option>
+                                                    <option value="">24</option>
+                                                </select></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="products-view__list products-list" data-layout="list"
+                                    data-with-features="false">
+                                    <div class="products-list__body">
+                                        {% for v in vendors %} 
+                                        <div class="products-list__item">
+                                            <div class="product-card"><button class="product-card__quickview"
+                                                    type="button"><svg width="16px" height="16px">
+                                                        <use xlink:href="images/sprite.svg#quickview-16"></use>
+                                                    </svg> <span class="fake-svg-icon"></span></button>
+                                                <div class="product-card__badges-list">
+                                                    <div class="product-card__badge product-card__badge--new">New</div>
+                                                </div>
+                                                <div class="product-card__image"><a href="#"><img
+                                                            src="{{ v.image.url }}" alt=""></a></div>
+                                                <div class="product-card__info">
+                                                    <div class="product-card__name" style="font-weight: bold;"><a href="#">{{ v.title }}
+                                                        </a></div>
+                                                    <div class="product-card__rating">
+                                                        <div class="rating">
+                                                            <div class="rating__body"><svg
+                                                                    class="rating__star rating__star--active"
+                                                                    width="13px" height="12px">
+                                                                    <g class="rating__fill">
+                                                                        <use xlink:href="images/sprite.svg#star-normal">
+                                                                        </use>
+                                                                    </g>
+                                                                    <g class="rating__stroke">
+                                                                        <use
+                                                                            xlink:href="images/sprite.svg#star-normal-stroke">
+                                                                        </use>
+                                                                    </g>
+                                                                </svg>
+                                                                <div
+                                                                    class="rating__star rating__star--only-edge rating__star--active">
+                                                                    <div class="rating__fill">
+                                                                        <div class="fake-svg-icon"></div>
+                                                                    </div>
+                                                                    <div class="rating__stroke">
+                                                                        <div class="fake-svg-icon"></div>
+                                                                    </div>
+                                                                </div><svg class="rating__star rating__star--active"
+                                                                    width="13px" height="12px">
+                                                                    <g class="rating__fill">
+                                                                        <use xlink:href="images/sprite.svg#star-normal">
+                                                                        </use>
+                                                                    </g>
+                                                                    <g class="rating__stroke">
+                                                                        <use
+                                                                            xlink:href="images/sprite.svg#star-normal-stroke">
+                                                                        </use>
+                                                                    </g>
+                                                                </svg>
+                                                                <div
+                                                                    class="rating__star rating__star--only-edge rating__star--active">
+                                                                    <div class="rating__fill">
+                                                                        <div class="fake-svg-icon"></div>
+                                                                    </div>
+                                                                    <div class="rating__stroke">
+                                                                        <div class="fake-svg-icon"></div>
+                                                                    </div>
+                                                                </div><svg class="rating__star rating__star--active"
+                                                                    width="13px" height="12px">
+                                                                    <g class="rating__fill">
+                                                                        <use xlink:href="images/sprite.svg#star-normal">
+                                                                        </use>
+                                                                    </g>
+                                                                    <g class="rating__stroke">
+                                                                        <use
+                                                                            xlink:href="images/sprite.svg#star-normal-stroke">
+                                                                        </use>
+                                                                    </g>
+                                                                </svg>
+                                                                <div
+                                                                    class="rating__star rating__star--only-edge rating__star--active">
+                                                                    <div class="rating__fill">
+                                                                        <div class="fake-svg-icon"></div>
+                                                                    </div>
+                                                                    <div class="rating__stroke">
+                                                                        <div class="fake-svg-icon"></div>
+                                                                    </div>
+                                                                </div><svg class="rating__star rating__star--active"
+                                                                    width="13px" height="12px">
+                                                                    <g class="rating__fill">
+                                                                        <use xlink:href="images/sprite.svg#star-normal">
+                                                                        </use>
+                                                                    </g>
+                                                                    <g class="rating__stroke">
+                                                                        <use
+                                                                            xlink:href="images/sprite.svg#star-normal-stroke">
+                                                                        </use>
+                                                                    </g>
+                                                                </svg>
+                                                                <div
+                                                                    class="rating__star rating__star--only-edge rating__star--active">
+                                                                    <div class="rating__fill">
+                                                                        <div class="fake-svg-icon"></div>
+                                                                    </div>
+                                                                    <div class="rating__stroke">
+                                                                        <div class="fake-svg-icon"></div>
+                                                                    </div>
+                                                                </div><svg class="rating__star" width="13px"
+                                                                    height="12px">
+                                                                    <g class="rating__fill">
+                                                                        <use xlink:href="images/sprite.svg#star-normal">
+                                                                        </use>
+                                                                    </g>
+                                                                    <g class="rating__stroke">
+                                                                        <use
+                                                                            xlink:href="images/sprite.svg#star-normal-stroke">
+                                                                        </use>
+                                                                    </g>
+                                                                </svg>
+                                                                <div class="rating__star rating__star--only-edge">
+                                                                    <div class="rating__fill">
+                                                                        <div class="fake-svg-icon"></div>
+                                                                    </div>
+                                                                    <div class="rating__stroke">
+                                                                        <div class="fake-svg-icon"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="product-card__rating-legend">9 Reviews</div>
+                                                    </div>
+                                                    <br>
+                                                    <ul class="product-card__features-list" style="margin-left: 24px">
+                                                        <li>since {{ v.date|date:"Y"}}</li>
+                                                        <li>{{ v.address }}</li>
+                                                        <li>Phone Num:{{ v.contact }}</li>
+                                                        
+                                                    </ul>
+                                                </div>
+                                                <div class="product-card__actions">
+                                                    <div class="product-card__availability">Product: <span
+                                                            class="text-success">{{v.vendor.count }}</span></div>
+                                                    
+                                                    <div class="product-card__buttons"><button
+                                                            class="btn btn-primary product-card__addtocart"
+                                                            type="button">View Page+</button> <button
+                                                            class="btn btn-secondary product-card__addtocart product-card__addtocart--list"
+                                                            type="button">View Page+</button> <button
+                                                            class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist"
+                                                            type="button"><svg width="16px" height="16px">
+                                                                <use xlink:href="images/sprite.svg#wishlist-16"></use>
+                                                            </svg> <span
+                                                                class="fake-svg-icon fake-svg-icon--wishlist-16"></span></button>
+                                                        <button
+                                                            class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare"
+                                                            type="button"><svg width="16px" height="16px">
+                                                                <use xlink:href="images/sprite.svg#compare-16"></use>
+                                                            </svg> <span
+                                                                class="fake-svg-icon fake-svg-icon--compare-16"></span></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>   
+                                        {% endfor %}                          
+                                    </div>
+                                </div>
+                                <div class="products-view__pagination">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled"><a class="page-link page-link--with-arrow"
+                                                href="#" aria-label="Previous"><svg
+                                                    class="page-link__arrow page-link__arrow--left" aria-hidden="true"
+                                                    width="8px" height="13px">
+                                                    <use xlink:href="images/sprite.svg#arrow-rounded-left-8x13"></use>
+                                                </svg></a></li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item active"><a class="page-link" href="#">2 <span
+                                                    class="sr-only">(current)</span></a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link page-link--with-arrow" href="#"
+                                                aria-label="Next"><svg class="page-link__arrow page-link__arrow--right"
+                                                    aria-hidden="true" width="8px" height="13px">
+                                                    <use xlink:href="images/sprite.svg#arrow-rounded-right-8x13"></use>
+                                                </svg></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- site__body / end --><!-- site__footer -->
+     
+    </div><!-- site / end -->
+
+    {% endblock content %}
