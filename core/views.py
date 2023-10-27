@@ -16,9 +16,8 @@ def index(request):
 
 def product_list_view(request):
     products = Product.objects.filter(product_status="published")
-    print("product cheking",products)
     context ={
-        "products":products
+        "products":products,
     }
     return render(request,'core/product-list.html',context)
 
@@ -27,11 +26,15 @@ def product_detail_view(request,pid):
     product = Product.objects.get(pid=pid)
     p_image = product.p_images.all()
     address = Address.objects.get(user=request.user)
-    
+    products = Product.objects.filter(Category=product.Category).exclude(pid=pid)
+    # whatever product category in .here we show all prodcut with same category.excluding the same product that showing in deatail page
+    #we can also use e[:4] for first 4 product
+    print("catprop,",products)
     context = {
         "product":product,
         "p_image":p_image,
-        "addr":address
+        "addr":address,
+        "cat_products":products
     }
     
     return render(request,"core/product-detail.html",context)

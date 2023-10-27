@@ -420,10 +420,10 @@
                                                 <div class="product-card__badges-list">
                                                     <div class="product-card__badge product-card__badge--new">New</div>
                                                 </div>
-                                                <div class="product-card__image"><a href="{% url "vendor-detail" v.Vid %}"><img
+                                                <div class="product-card__image"><a href="{% url 'vendor-detail' v.Vid %}"><img
                                                             src="{{ v.image.url }}" alt=""></a></div>
                                                 <div class="product-card__info">
-                                                    <div class="product-card__name" style="font-weight: bold;"><a href="{% url "vendor-detail" v.Vid %}">{{ v.title }}
+                                                    <div class="product-card__name" style="font-weight: bold;"><a href="{% url 'vendor-detail' v.Vid %}">{{ v.title }}
                                                         </a></div>
                                                     <div class="product-card__rating">
                                                         <div class="rating">

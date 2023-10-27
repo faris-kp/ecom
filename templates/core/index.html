@@ -132,11 +132,11 @@
                                         <div class="product-card__badges-list">
                                             <div class="product-card__badge product-card__badge--new">-{{ p.get_persentage|floatformat:0 }}%</div>
                                         </div>
-                                        <div class="product-card__image"><a href="product.html"><img
+                                        <div class="product-card__image"><a href="{% url "product-detail" p.pid %}"><img
                                                     src="{{ p.image.url }}" alt=""></a></div>
                                         <div class="product-card__info">
                                             <div class="category-name">{{ p.Category.title }}</div> 
-                                            <div class="product-card__name"><a href="product.html">{{ p.title }}</a></div>
+                                            <div class="product-card__name"><a href="{% url "product-detail" p.pid %}">{{ p.title }}</a></div>
                                             
                                             <div class="product-card__rating">
                                                 <div class="rating__star rating__star--only-edge rating__star--active">
