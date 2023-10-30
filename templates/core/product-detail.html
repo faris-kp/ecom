@@ -644,13 +644,13 @@
                                         </Ul>
                                         </div>
                                         <div class="form-group product__option"><label
-                                                class="product__option-label">Material</label>
+                                                class="product__option-label">Tags</label>
                                             <div class="input-radio-label">
-                                                <div class="input-radio-label__list"><label><input type="radio"
-                                                            name="material"> <span>Metal</span></label> <label><input
-                                                            type="radio" name="material"> <span>Wood</span></label>
-                                                    <label><input type="radio" name="material" disabled="disabled">
-                                                        <span>Plastic</span></label></div>
+                                                <div class="input-radio-label__list">
+                                                    {% for tags in product.tags.all %}
+                                                    <label><input type="radio" name="material"> <span><a href="#" style="color: inherit;text-decoration: none;">{{ tags.name }}</a></span></label> 
+                                                    {% endfor %}
+                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group product__option"><label class="product__option-label"
