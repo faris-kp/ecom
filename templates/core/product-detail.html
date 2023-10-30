@@ -577,7 +577,7 @@
                                     <div class="product__rating-legend"><a href="#">7 Reviews</a><span>/</span><a
                                             href="#">Write A Review</a></div>
                                 </div>
-                                <div class="product__description">{{ product.decription|truncatechars:150 }}</div>
+                                <div class="product__description">{{ product.decription|truncatechars:154|safe }}</div>
                                 <div class="product__availability">Availability: <span class="text-success">In
                                     Stock</span></div>
                             <div class="product__prices">${{ product.price }}</div>
@@ -709,7 +709,7 @@
                             <div class="product-tabs__pane product-tabs__pane--active" id="tab-description">
                                 <div class="typography">
                                     <h3>Product Full Description</h3>
-                                    <p>{{ product.decription }}</p>
+                                    <p>{{ product.decription|safe }}</p>
                                     
                                 </div>
                             </div>
