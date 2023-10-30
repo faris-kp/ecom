@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'taggit',
       
     #custom app
     'core',
@@ -85,9 +86,9 @@ DATABASES = {
        'ENGINE': 'django.db.backends.postgresql',
        'NAME': 'ecom',
        'USER': 'postgres',
-       'PASSWORD': os.environ.get('DB_PASS'),
+       'PASSWORD': os.environ.get('DB_PASS_NEW'),
        'HOST': 'localhost',
-       'PORT': '5432',
+       'PORT': '5433',
    }
 }
 
