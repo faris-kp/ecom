@@ -1,15 +1,6 @@
 {% extends 'partials/base.html' %}
 {% load static %}
-{% block custom_css %}
-<link rel="stylesheet" href="{% static 'css/rev.css' %}">
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-{% endblock custom_css %}
-{% block custom_js %}
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-{% endblock %}
 {% block content %}
-
 
 <body><!-- quickview-modal -->
     <div id="quickview-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -713,7 +704,7 @@
                         <div class="product-tabs__list"><a href="#tab-description"
                                 class="product-tabs__item product-tabs__item--active">Description</a> <a
                                 href="#tab-specification" class="product-tabs__item">Specification</a> <a
-                                href="#tab-reviews" class="product-tabs__item">Reviews({{ reviews.count }})</a></div>
+                                href="#tab-reviews" class="product-tabs__item">Reviews</a></div>
                         <div class="product-tabs__content">
                             <div class="product-tabs__pane product-tabs__pane--active" id="tab-description">
                                 <div class="typography">
@@ -782,113 +773,13 @@
                                     <div class="reviews-view__list">
                                         <h3 class="reviews-view__header">Customer Reviews</h3>
                                         <div class="reviews-list">
-                                            <!-- custum review start -->
-
-
-                                            <div class="container">
-                                                <div class="row"  style="width: 174%;">
-                                                    <div class="col-xs-12 col-md-6">
-                                                        <div class="well well-sm">
-                                                            <div class="row">
-                                                                <div class="col-xs-12 col-md-6 text-center">
-                                                                    <h1 class="rating-num">
-                                                                        {{ average_rating.rating|floatformat:1 }}</h1>
-                                                                    <div class="rating">
-                                                                        <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
-                                                                        </span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
-                                                                        </span><span class="glyphicon glyphicon-star-empty"></span>
-                                                                    </div>
-                                                                    <div>
-                                                                        <span class="glyphicon glyphicon-user"></span>1,050,008 total
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-xs-12 col-md-6">
-                                                                    <div class="row rating-desc">
-                                                                        <div class="col-xs-3 col-md-3 text-right">
-                                                                            <span class="glyphicon glyphicon-star"></span>5
-                                                                        </div>
-                                                                        <div class="col-xs-8 col-md-9">
-                                                                            <div class="progress progress-striped">
-                                                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
-                                                                                    aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                                                                    <span class="sr-only">80%</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- end 5 -->
-                                                                        <div class="col-xs-3 col-md-3 text-right">
-                                                                            <span class="glyphicon glyphicon-star"></span>4
-                                                                        </div>
-                                                                        <div class="col-xs-8 col-md-9">
-                                                                            <div class="progress">
-                                                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20"
-                                                                                    aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                                                                    <span class="sr-only">60%</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- end 4 -->
-                                                                        <div class="col-xs-3 col-md-3 text-right">
-                                                                            <span class="glyphicon glyphicon-star"></span>3
-                                                                        </div>
-                                                                        <div class="col-xs-8 col-md-9">
-                                                                            <div class="progress">
-                                                                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20"
-                                                                                    aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                                                    <span class="sr-only">40%</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- end 3 -->
-                                                                        <div class="col-xs-3 col-md-3 text-right">
-                                                                            <span class="glyphicon glyphicon-star"></span>2
-                                                                        </div>
-                                                                        <div class="col-xs-8 col-md-9">
-                                                                            <div class="progress">
-                                                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="20"
-                                                                                    aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                                                                    <span class="sr-only">20%</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- end 2 -->
-                                                                        <div class="col-xs-3 col-md-3 text-right">
-                                                                            <span class="glyphicon glyphicon-star"></span>1
-                                                                        </div>
-                                                                        <div class="col-xs-8 col-md-9">
-                                                                            <div class="progress">
-                                                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80"
-                                                                                    aria-valuemin="0" aria-valuemax="100" style="width: 15%">
-                                                                                    <span class="sr-only">15%</span>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- end 1 -->
-                                                                    </div>
-                                                                    <!-- end row -->
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                            <!-- custum review end -->
-                                            <br>
-                                            <br>
                                             <ol class="reviews-list__content">
-                                                {% for rev in reviews  %}
                                                 <li class="reviews-list__item">
                                                     <div class="review">
                                                         <div class="review__avatar"><img
                                                                 src="{% static 'images/avatars/avatar-1.jpg' %}" alt=""></div>
                                                         <div class="review__content">
-                                                            <div class="review__author">{{ rev.user.username }}</div>
-                                                            <div class="rating">
-                                                                <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
-                                                                </span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star">
-                                                                </span><span class="glyphicon glyphicon-star-empty"></span>
-                                                            </div>
+                                                            <div class="review__author">Samantha Smith</div>
                                                             <div class="review__rating">
                                                                 <div class="rating">
                                                                     <div class="rating__body"><svg
@@ -1004,14 +895,274 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="review__text" style="font-weight: lighter;">{{ rev.review  }}
+                                                            <div class="review__text">Phasellus id mattis nulla. Mauris
+                                                                velit nisi, imperdiet vitae sodales in, maximus ut
+                                                                lectus. Vivamus commodo scelerisque lacus, at porttitor
+                                                                dui iaculis id. Curabitur imperdiet ultrices fermentum.
                                                             </div>
-                                                            <div class="review__date">{{ rev.date|date:"d M, Y" }}</div>
+                                                            <div class="review__date">27 May, 2018</div>
                                                         </div>
                                                     </div>
                                                 </li>
-                                                {% endfor %}
-                                              
+                                                <li class="reviews-list__item">
+                                                    <div class="review">
+                                                        <div class="review__avatar"><img
+                                                                src="{% static 'images/avatars/avatar-2.jpg' %}" alt=""></div>
+                                                        <div class="review__content">
+                                                            <div class="review__author">Adam Taylor</div>
+                                                            <div class="review__rating">
+                                                                <div class="rating">
+                                                                    <div class="rating__body"><svg
+                                                                            class="rating__star rating__star--active"
+                                                                            width="13px" height="12px">
+                                                                            <g class="rating__fill">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal">
+                                                                                </use>
+                                                                            </g>
+                                                                            <g class="rating__stroke">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal-stroke">
+                                                                                </use>
+                                                                            </g>
+                                                                        </svg>
+                                                                        <div
+                                                                            class="rating__star rating__star--only-edge rating__star--active">
+                                                                            <div class="rating__fill">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                            <div class="rating__stroke">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                        </div><svg
+                                                                            class="rating__star rating__star--active"
+                                                                            width="13px" height="12px">
+                                                                            <g class="rating__fill">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal">
+                                                                                </use>
+                                                                            </g>
+                                                                            <g class="rating__stroke">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal-stroke">
+                                                                                </use>
+                                                                            </g>
+                                                                        </svg>
+                                                                        <div
+                                                                            class="rating__star rating__star--only-edge rating__star--active">
+                                                                            <div class="rating__fill">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                            <div class="rating__stroke">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                        </div><svg
+                                                                            class="rating__star rating__star--active"
+                                                                            width="13px" height="12px">
+                                                                            <g class="rating__fill">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal">
+                                                                                </use>
+                                                                            </g>
+                                                                            <g class="rating__stroke">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal-stroke">
+                                                                                </use>
+                                                                            </g>
+                                                                        </svg>
+                                                                        <div
+                                                                            class="rating__star rating__star--only-edge rating__star--active">
+                                                                            <div class="rating__fill">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                            <div class="rating__stroke">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                        </div><svg class="rating__star" width="13px"
+                                                                            height="12px">
+                                                                            <g class="rating__fill">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal">
+                                                                                </use>
+                                                                            </g>
+                                                                            <g class="rating__stroke">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal-stroke">
+                                                                                </use>
+                                                                            </g>
+                                                                        </svg>
+                                                                        <div
+                                                                            class="rating__star rating__star--only-edge">
+                                                                            <div class="rating__fill">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                            <div class="rating__stroke">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                        </div><svg class="rating__star" width="13px"
+                                                                            height="12px">
+                                                                            <g class="rating__fill">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal">
+                                                                                </use>
+                                                                            </g>
+                                                                            <g class="rating__stroke">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal-stroke">
+                                                                                </use>
+                                                                            </g>
+                                                                        </svg>
+                                                                        <div
+                                                                            class="rating__star rating__star--only-edge">
+                                                                            <div class="rating__fill">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                            <div class="rating__stroke">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="review__text">Aenean non lorem nisl. Duis tempor
+                                                                sollicitudin orci, eget tincidunt ex semper sit amet.
+                                                                Nullam neque justo, sodales congue feugiat ac, facilisis
+                                                                a augue. Donec tempor sapien et fringilla facilisis. Nam
+                                                                maximus consectetur diam. Nulla ut ex mollis, volutpat
+                                                                tellus vitae, accumsan ligula.</div>
+                                                            <div class="review__date">12 April, 2018</div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="reviews-list__item">
+                                                    <div class="review">
+                                                        <div class="review__avatar"><img
+                                                                src="{% static 'images/avatars/avatar-3.jpg' %}" alt=""></div>
+                                                        <div class="review__content">
+                                                            <div class="review__author">Helena Garcia</div>
+                                                            <div class="review__rating">
+                                                                <div class="rating">
+                                                                    <div class="rating__body"><svg
+                                                                            class="rating__star rating__star--active"
+                                                                            width="13px" height="12px">
+                                                                            <g class="rating__fill">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal">
+                                                                                </use>
+                                                                            </g>
+                                                                            <g class="rating__stroke">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal-stroke">
+                                                                                </use>
+                                                                            </g>
+                                                                        </svg>
+                                                                        <div
+                                                                            class="rating__star rating__star--only-edge rating__star--active">
+                                                                            <div class="rating__fill">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                            <div class="rating__stroke">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                        </div><svg
+                                                                            class="rating__star rating__star--active"
+                                                                            width="13px" height="12px">
+                                                                            <g class="rating__fill">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal">
+                                                                                </use>
+                                                                            </g>
+                                                                            <g class="rating__stroke">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal-stroke">
+                                                                                </use>
+                                                                            </g>
+                                                                        </svg>
+                                                                        <div
+                                                                            class="rating__star rating__star--only-edge rating__star--active">
+                                                                            <div class="rating__fill">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                            <div class="rating__stroke">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                        </div><svg
+                                                                            class="rating__star rating__star--active"
+                                                                            width="13px" height="12px">
+                                                                            <g class="rating__fill">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal">
+                                                                                </use>
+                                                                            </g>
+                                                                            <g class="rating__stroke">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal-stroke">
+                                                                                </use>
+                                                                            </g>
+                                                                        </svg>
+                                                                        <div
+                                                                            class="rating__star rating__star--only-edge rating__star--active">
+                                                                            <div class="rating__fill">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                            <div class="rating__stroke">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                        </div><svg
+                                                                            class="rating__star rating__star--active"
+                                                                            width="13px" height="12px">
+                                                                            <g class="rating__fill">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal">
+                                                                                </use>
+                                                                            </g>
+                                                                            <g class="rating__stroke">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal-stroke">
+                                                                                </use>
+                                                                            </g>
+                                                                        </svg>
+                                                                        <div
+                                                                            class="rating__star rating__star--only-edge rating__star--active">
+                                                                            <div class="rating__fill">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                            <div class="rating__stroke">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                        </div><svg
+                                                                            class="rating__star rating__star--active"
+                                                                            width="13px" height="12px">
+                                                                            <g class="rating__fill">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal">
+                                                                                </use>
+                                                                            </g>
+                                                                            <g class="rating__stroke">
+                                                                                <use
+                                                                                    xlink:href="images/sprite.svg#star-normal-stroke">
+                                                                                </use>
+                                                                            </g>
+                                                                        </svg>
+                                                                        <div
+                                                                            class="rating__star rating__star--only-edge rating__star--active">
+                                                                            <div class="rating__fill">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                            <div class="rating__stroke">
+                                                                                <div class="fake-svg-icon"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="review__text">Duis ac lectus scelerisque quam
+                                                                blandit egestas. Pellentesque hendrerit eros laoreet
+                                                                suscipit ultrices.</div>
+                                                            <div class="review__date">2 January, 2018</div>
+                                                        </div>
+                                                    </div>
+                                                </li>
                                             </ol>
                                             <div class="reviews-list__pagination">
                                                 <ul class="pagination justify-content-center">

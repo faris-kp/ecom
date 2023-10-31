@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.db.models import Count
+from django.db.models import Count,Avg
 from taggit.models import Tag
 from core.models import Product,Category,Vendor,ProductImages,CartOrderItems,CartOrder,ProductReview,Wishlist,Address
 # Create your views here.
@@ -30,12 +30,18 @@ def product_detail_view(request,pid):
     products = Product.objects.filter(Category=product.Category).exclude(pid=pid)
     # whatever product category in .here we show all prodcut with same category.excluding the same product that showing in deatail page
     #we can also use e[:4] for first 4 product
+    reviews = ProductReview.objects.filter(product=product).order_by("-date") # rating from user
+    
+    average_rating = ProductReview.objects.filter(product=product).aggregate(rating=Avg('rating'))
     print("catprop,",products)
-    context = {
+    context = { 
         "product":product,
         "p_image":p_image,
         "addr":address,
-        "cat_products":products
+        "reviews":reviews,
+        "cat_products":products,
+        "average_rating":average_rating
+        
     }
     
     return render(request,"core/product-detail.html",context)

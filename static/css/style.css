@@ -7668,7 +7668,8 @@ screen and (min-width:480px) and (-ms-high-contrast:active) {
 }
 
 .reviews-list__item:first-child {
-    padding-top: 0
+    padding-top: 0;
+    width:75%;
 }
 
 .reviews-list__pagination {
