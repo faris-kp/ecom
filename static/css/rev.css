@@ -28,3 +28,27 @@
     overflow: visible;
     clip: auto;
 }
+
+
+.custom-button {
+    background-color: #3276b1;
+    width: 136px;
+    height: 33px;
+    /* Change the background color to blue */
+    color: white;
+    /* Change the text color to white */
+    font-size: 1.5rem;
+    /* Change the font size to make it larger */
+    padding: 10px 20px;
+    /* Adjust padding for button size */
+    border: none;
+    /* Remove the button border */
+    cursor: pointer;
+    /* Add a pointer cursor on hover */
+}
+
+.custom-button:hover {
+    background-color:  #3276b1;
+    color: white;
+    /* Change the background color on hover */
+}

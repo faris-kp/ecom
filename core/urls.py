@@ -19,6 +19,9 @@ urlpatterns = [
     # tags
     
     path("prodcuts/tag/<slug:tag_slug>",views.tag_list, name="tags"),
+    
+    #add_review
+    path("ajax-add-review/<pid>/",views.ajax_add_review, name="add-review")
 ]
 
 if settings.DEBUG:

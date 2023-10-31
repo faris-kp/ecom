@@ -26,6 +26,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     {% block custom_css %}
 
     {% endblock custom_css %}
@@ -584,25 +585,11 @@
             </div>
         </footer><!-- site__footer / end -->
     </div><!-- site / end -->
-    <script>
-    document.getElementById("departments__button").addEventListener("click", function () {
-        var categories = document.querySelectorAll(".departments__body");
-        categories.forEach(function (category) {
-            // Check if the display property is set, and toggle it
-            if (category.style.display === "none" || category.style.display === "") {
-                category.style.display = "block"; // Display the category
-            } else {
-                category.style.display = "none"; // Hide the category
-            }
-        });
-    });
-    $(document).ready(function() {
-            setTimeout(() => {
-                $(".alert").alert("close");
-            }, 3000);
-        });
-</script>
 
+<!-- <script src="{% static 'js/mes.js' %}"></script> -->
+<script src="{% static 'js/rev.js' %}"></script>
+
+<!-- <script src="{% static 'js/message.js' %}"></script> -->
 </body>
 
 </html>
