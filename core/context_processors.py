@@ -2,6 +2,7 @@ from core.models import Product,Category,Vendor,ProductImages,CartOrderItems,Car
 
 def custom_data(request):
     # Define a function that adds custom data to the context
+    
     categories = Category.objects.all()
     
     return {

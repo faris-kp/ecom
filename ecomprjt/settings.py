@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'taggit',
+    'ckeditor',
       
     #custom app
     'core',
@@ -93,6 +94,8 @@ DATABASES = {
 }
 
 
+
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -136,6 +139,23 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_CONFIGS = {
+    'default':{
+        'skin':'moono',
+        'codeSnippet_theme':'monokai',
+        'toolbar':'all',
+        'extraPlugins':','.join(
+            [
+                'codesnippet',
+                'widget',
+                'dialog',
+            ]
+        ),
+    }
+}
 
 
 JAZZMIN_SETTINGS = {
