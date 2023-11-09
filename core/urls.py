@@ -19,6 +19,7 @@ urlpatterns = [
     # tags
     
     path("prodcuts/tag/<slug:tag_slug>",views.tag_list, name="tags"),
+    path("search/",views.serch_veiw,name="search")
 ]
 
 if settings.DEBUG:

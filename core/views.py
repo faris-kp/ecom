@@ -92,3 +92,25 @@ def tag_list(request,tag_slug=None):
     }
     
     return render(request,"core/tag.html", context)
+
+def serch_veiw(request):
+    query = request.GET.get("q")
+    print("ueef",query)
+    Products = Product.objects.filter(product_status="published")
+    products = Product.objects.filter(title__icontains=query).order_by("-date")
+    print("search cheking",products)
+    if products is None:
+        context = {
+        "Products":Products,
+        "query":query
+        }
+    else:
+        context = {
+        "Products":products,
+        "query":query
+        }
+    
+    return render(request,"core/search.html",context)
+    
+    
+
