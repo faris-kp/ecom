@@ -17,7 +17,6 @@
                                 width="6px" height="9px">
                                 <use xlink:href="images/sprite.svg#arrow-rounded-right-6x9"></use>
                             </svg></li>
-                    
                             {% endif %}
                         <li class="breadcrumb-item active" aria-current="page">{{ category.title }}</li>
                     </ol>
@@ -59,12 +58,11 @@
                                                                 <use
                                                                     xlink:href="images/sprite.svg#arrow-rounded-left-6x9">
                                                                 </use>
-                                                            </svg> <a href="{% url "category-list" c.cid %}">{{ c.title }}</a>
+                                                            </svg> <input type="checkbox" id="category-{{ c.cid }}" name="category" value="{{ c.cid }}"><a href="{% url "category-list" c.cid %}">{{ c.title }}</a>
                                                             <div class="filter-categories__counter">{{ c.category.count }}</div>
                                                         </li>
                                                         {% endfor %}
-                                                        <li
-                                                            class="filter-categories__item filter-categories__item--current">
+                                                        <li class="filter-categories__item filter-categories__item--current">
                                                             <a href="#">Power Tools</a>
                                                             <div class="filter-categories__counter">21</div>
                                                         </li>
