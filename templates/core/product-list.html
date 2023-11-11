@@ -1,5 +1,8 @@
 {% extends 'partials/base.html' %}
 {% load static %}
+{% block custom_css %}
+<link rel="stylesheet" href="{% static 'css/price.css' %}">
+{% endblock custom_css %}
 {% block content %}
 
 <div class="site__body">
@@ -95,13 +98,16 @@
                                         </button>
                                         <div class="filter__body" data-collapse-content>
                                             <div class="filter__container">
-                                                <div class="filter-price" data-min="500" data-max="1500"
-                                                    data-from="590" data-to="1130">
-                                                    <div class="filter-price__slider"></div>
-                                                    <div class="filter-price__title">Price: $<span
-                                                            class="filter-price__min-value"></span> – $<span
-                                                            class="filter-price__max-value"></span></div>
-                                                </div>
+                                                <input type="range" id="range" class="slider-range" name="range" min="{{ min_max_price.price__min }}" max="{{ min_max_price.price__max }}" oninput="max_price.value=this.value">
+                                                <div class="caption-container">
+                                                    <div class="caption" id="slide1">From: <strong id="slider-range-value1" class="text-brand">{{ min_max_price.price__min }}</strong></div>
+                                                    <div class="caption" id="slide2">To: <strong id="slider-range-value2" class="text-brand">{{ min_max_price.price__max }}</strong></div>
+                                                    </div>
+                            
+                                                <br>
+                                                <input type="number" name="" id="max_price" min="{{ min_max_price.price__min }}" max="{{ min_max_price.price__max }}" placeholder="Current Price" onkeyup="range.value=this.value" style="width: -webkit-fill-available;">
+                                                
+                                                <br>
                                                 <br>
                                                 <button class="btn mt-20 w-100" style="color: white;
                                                 border-color: black;
@@ -698,7 +704,7 @@
                                         <div class="product-card__badges-list">
                                             <div class="product-card__badge product-card__badge--new">-{{ p.get_persentage|floatformat:0 }}%</div>
                                         </div>
-                                        <div class="product-card__image"><a href="{% url "product-detail" p.pid %}"><img
+                                        <div class="product-card__image"><a href="{% url 'product-detail' p.pid %}"><img
                                                     src="{{ p.image.url }}" alt=""></a></div> 
                                         <div class="product-card__info">
                                             <div class="category-name" >{{ p.Category.title }}</div>
