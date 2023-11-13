@@ -124,8 +124,17 @@ def serch_veiw(request):
 def filter_product(request):
     categories = request.GET.getlist("category[]")
     vendors = request.GET.getlist("vendor[]")
+    min_price = request.GET['min_price']
+    max_price = request.GET['max_price']
+    print("minprice =",min_price)
+    print("max_price=",max_price)
     
     products = Product.objects.filter(product_status="published").order_by("-id").distinct()
+    
+    products =products.filter(price__gte =min_price,price__lte =max_price )
+    print("minprice pr =",products)
+    products =products.filter()
+    print("maxnprice pr =",products)
     
     if len(categories) > 0:
         products = products.filter(Category__id__in=categories).distinct()
@@ -134,7 +143,8 @@ def filter_product(request):
         products = products.filter(vendor__id__in=vendors).distinct()
         print("vendor cheking",products)
         
-        
+    print("products after addingmin max=",products)
     data = render_to_string("core/async/product-list.html",{"products":products})
+    
     
     return JsonResponse({"data":data})

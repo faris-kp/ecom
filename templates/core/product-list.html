@@ -98,18 +98,18 @@
                                         </button>
                                         <div class="filter__body" data-collapse-content>
                                             <div class="filter__container">
-                                                <input type="range" id="range" class="slider-range" name="range" min="{{ min_max_price.price__min }}" max="{{ min_max_price.price__max }}" oninput="max_price.value=this.value">
+                                                <input type="range" id="range" value="{{ min_max_price.price__min|floatformat:2 }}" class="slider-range" name="range" min="{{ min_max_price.price__min }}" max="{{ min_max_price.price__max }}" oninput="max_price.value=this.value">
                                                 <div class="caption-container">
-                                                    <div class="caption" id="slide1">From: <strong id="slider-range-value1" class="text-brand">{{ min_max_price.price__min }}</strong></div>
-                                                    <div class="caption" id="slide2">To: <strong id="slider-range-value2" class="text-brand">{{ min_max_price.price__max }}</strong></div>
+                                                    <div class="caption" id="slide1">From: <strong id="slider-range-value1" class="text-brand">${{ min_max_price.price__min }}</strong></div>
+                                                    <div class="caption" id="slide2">To: <strong id="slider-range-value2" class="text-brand">${{ min_max_price.price__max }}</strong></div>
                                                     </div>
                             
                                                 <br>
-                                                <input type="number" name="" id="max_price" min="{{ min_max_price.price__min }}" max="{{ min_max_price.price__max }}" placeholder="Current Price" onkeyup="range.value=this.value" style="width: -webkit-fill-available;">
+                                                <input type="number" name="" value="{{ min_max_price.price__min|floatformat:2 }}" id="max_price" min="{{ min_max_price.price__min|floatformat:2 }}" max="{{ min_max_price.price__max|floatformat:2 }}" placeholder="Current Price" onkeyup="range.value=this.value" style="width: -webkit-fill-available;">
                                                 
                                                 <br>
                                                 <br>
-                                                <button class="btn mt-20 w-100" style="color: white;
+                                                <button class="btn mt-20 w-100" type="button"  id="price-filter-btn" style="color: white;
                                                 border-color: black;
                                                 background-color: #0069d9;">Filter by price</button>
                                             </div>
