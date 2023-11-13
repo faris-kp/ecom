@@ -1,0 +1,34 @@
+/* Default styles for the range input */
+.slider-range {
+    width: 100%;
+  }
+  
+  /* Set background color for the slider thumb at the maximum value */
+  .slider-range::-webkit-slider-thumb {
+    background-color: rgb(173, 237, 173);
+  }
+  
+  /* Set background color for the track when slider is at the maximum value */
+  .slider-range::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, rgb(131, 188, 131) 0%, rgb(12, 177, 12) 100%);
+  }
+  
+
+  .caption-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  #slide1, #slide2 {
+    flex: 1;
+  }
+  #slide1 {
+    
+    text-align: left;
+  }
+
+  #slide2 {
+
+    text-align: right;
+  }

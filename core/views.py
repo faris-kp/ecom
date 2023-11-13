@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.db.models import Count
 from taggit.models import Tag
 from core.models import Product,Category,Vendor,ProductImages,CartOrderItems,CartOrder,ProductReview,Wishlist,Address
+from django.template.loader import render_to_string
+from django.http import JsonResponse
 # Create your views here.
 
 
@@ -96,21 +98,53 @@ def tag_list(request,tag_slug=None):
 def serch_veiw(request):
     query = request.GET.get("q")
     print("ueef",query)
-    Products = Product.objects.filter(product_status="published")
+    all = Product.objects.filter(product_status="published")
+    print("all",all)
     products = Product.objects.filter(title__icontains=query).order_by("-date")
     print("search cheking",products)
-    if products is None:
+    if not products.exists():
+        print("Function Entered")
         context = {
-        "Products":Products,
-        "query":query
-        }
+        "Products": all,
+        "query": "All Products"
+    }
     else:
+        print("Else function entered")
         context = {
-        "Products":products,
-        "query":query
-        }
+        "Products": products,
+        "query": query
+    }
+
+    print("context cheking",context)
     
     return render(request,"core/search.html",context)
     
     
 
+def filter_product(request):
+    categories = request.GET.getlist("category[]")
+    vendors = request.GET.getlist("vendor[]")
+    min_price = request.GET['min_price']
+    max_price = request.GET['max_price']
+    print("minprice =",min_price)
+    print("max_price=",max_price)
+    
+    products = Product.objects.filter(product_status="published").order_by("-id").distinct()
+    
+    products =products.filter(price__gte =min_price,price__lte =max_price )
+    print("minprice pr =",products)
+    products =products.filter()
+    print("maxnprice pr =",products)
+    
+    if len(categories) > 0:
+        products = products.filter(Category__id__in=categories).distinct()
+        
+    if len(vendors) > 0:
+        products = products.filter(vendor__id__in=vendors).distinct()
+        print("vendor cheking",products)
+        
+    print("products after addingmin max=",products)
+    data = render_to_string("core/async/product-list.html",{"products":products})
+    
+    
+    return JsonResponse({"data":data})

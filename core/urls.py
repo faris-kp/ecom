@@ -10,6 +10,7 @@ urlpatterns = [
     path("products/",views.product_list_view, name="products"),
     path("products/category/<cid>",views.category_product_list_view, name="category-list"),
     path("products/<pid>",views.product_detail_view, name="product-detail"),
+    path("filter-product/",views.filter_product,name="filter-product"),
     
     #vendors
     path("vendors/",views.vendor_list_view, name = "vendor-list"),
@@ -19,7 +20,9 @@ urlpatterns = [
     # tags
     
     path("prodcuts/tag/<slug:tag_slug>",views.tag_list, name="tags"),
-    path("search/",views.serch_veiw,name="search")
+    path("search/",views.serch_veiw,name="search"),
+    
+    
 ]
 
 if settings.DEBUG:
