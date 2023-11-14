@@ -59,4 +59,47 @@ $(document).ready(function(){
     }
 
   })  
+
+
+//Add to cart 
+
+  $("#add-to-cart").on("click", function(event){
+    console.log("hellow world")
+    event.preventDefault();
+    let quantity = $("#product-quantity").val()  
+    let product_title = $(".product-title").val()
+    let product_id = $(".product-id").val()
+    let product_price = $(".product__prices").text()
+    let this_val = $(this)
+
+    console.log("qua:",quantity);
+    console.log("title",product_title);
+    console.log("id",product_id);
+    console.log("price:",product_price);
+    console.log("this:",this_val);
+    $.ajax({
+        url:'/add-to-cart',
+        data:{
+            'id':product_id,
+            'qty':quantity,
+            'title':product_title,
+            'price':product_price
+        },
+        dataType:'json',
+        beforeSend:function(){
+            console.log("adding prodcut to cart");
+        },
+        success:function(res){
+            this_val.html("Item added successfully")
+
+            console.log("added prodcut to cart");
+            $(".cart-item-count").text(res.totalcartitem)
+        }
+    })
+
 })
+})
+
+
+
+
