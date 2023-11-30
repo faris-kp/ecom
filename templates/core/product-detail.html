@@ -589,7 +589,7 @@
                                     <div class="product__actions">
                                         <div class="product__actions-item">
                                             <div class="input-number product__quantity"><input id="product-quantity"
-                                                    class="input-number__input form-control form-control-lg"
+                                                    class="input-number__input form-control form-control-lg product-quantity-{{ product.id }}"
                                                     type="number" min="1" value="1">
                                                 <div class="input-number__add"></div>
                                                 <div class="input-number__sub"></div>
@@ -599,7 +599,7 @@
                                         <!-- <input type="hidden" value="{{ product.id }}"  class="product-id" id="" name="">
                                         <input type="hidden" value="{{ product.title }}" class="product-title" id="" name=""> -->
                                     
-                                        <input id="product-quantity2" class="product-quantity-{{ product.id }}" type="hidden"  value="1">
+                                        <!-- <input id="product-quantity2" class="product-quantity-{{ product.id }}" type="hidden"  value="1"> -->
                                         <input type="hidden" value="{{ product.pid }}"  class="product-pid-{{ product.id }}" id="" name="">
                                         <input type="hidden" value="{{ product.image.url }}" class="product-image-{{ product.id }}" id="" name="">
                                         <input type="hidden" value="{{ product.id }}"  class="product-id-{{ product.id }}" id="" name="">
@@ -1376,13 +1376,19 @@
                                         <div class="product-card__actions">
                                             <div class="product-card__availability">Availability: <span
                                                     class="text-success">In Stock</span></div>
-                                            <div class="product-card__prices"><span
-                                                    class="product-card__new-price">${{ pr.price }}</span> <span
-                                                    class="product-card__old-price">${{ pr.old_price }}</span></div>
-                                            <div class="product-card__buttons"><button
-                                                    class="btn btn-primary product-card__addtocart" type="button">Add To
-                                                    Cart</button><button
-                                                    class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist"
+                                            <div class="product-card__prices">
+                                                <div class="product__prices_123">$<span class="product__prices-{{ pr.id }}">{{ pr.price }}</span></div>
+                                        <span class="product-card__old-price">${{ pr.old_price }}</span></div>
+                                            <div class="product-card__buttons">
+
+                                <input id="product-quantity" class="product-quantity-{{ pr.id }}" type="hidden"  value="1">
+                                <input type="hidden" value="{{ pr.pid }}"  class="product-pid-{{ pr.id }}" id="" name="">
+                                <input type="hidden" value="{{ pr.image.url }}" class="product-image-{{ pr.id }}" id="" name="">
+                                <input type="hidden" value="{{ pr.id }}"  class="product-id-{{ pr.id }}" id="" name="">
+                                <input type="hidden" value="{{ pr.title }}" class="product-title-{{ pr.id }}" id="" name="">
+                                <button class="btn btn-primary product-card__addtocart add-to-cart-btn" id="add-to-cart-btn"  data-index="{{ pr.id }}" type="button">Add To
+                                                    Cart</button>
+                                                <button  class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist"
                                                     type="button"><svg width="16px" height="16px">
                                                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
                                                     </svg> <span

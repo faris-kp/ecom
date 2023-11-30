@@ -174,9 +174,7 @@
                                                     class="text-success">In Stock</span></div>
                                                     <div class="product__prices_123">$<span class="product__prices-{{ p.id }}">{{ p.price }}</span></div>
                                             <div class="product-card__prices" style="color: #888;">${{ p.old_price }}</div>
-                                            <input id="product-quantity"
-                                                    class="product-quantity-{{ p.id }}"
-                                                    type="hidden"  value="1">
+                                            <input id="product-quantity" class="product-quantity-{{ p.id }}" type="hidden"  value="1">
                                         <input type="hidden" value="{{ p.pid }}"  class="product-pid-{{ p.id }}" id="" name="">
                                         <input type="hidden" value="{{ p.image.url }}" class="product-image-{{ p.id }}" id="" name="">
                                         <input type="hidden" value="{{ p.id }}"  class="product-id-{{ p.id }}" id="" name="">
