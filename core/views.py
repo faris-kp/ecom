@@ -33,7 +33,10 @@ def product_detail_view(request,pid):
     # whatever product category in .here we show all prodcut with same category.excluding the same product that showing in deatail page
     #we can also use e[:4] for first 4 product
     print("catprop,",products)
+    print("enter the cart")
+    
     context = {
+        
         "product":product,
         "p_image":p_image,
         "addr":address,
@@ -151,8 +154,16 @@ def filter_product(request):
 
 def add_to_cart(request):
     cart_product = {}
+    title = request.GET.get('title', 'Default Title')
+    pid = request.GET.get('pid', 'Default PID')
+    image = request.GET.get('image', 'Default image')
+    qty = request.GET.get('qty', 'Default qty')
+    price = request.GET.get('price', 'Default price')
     
     cart_product[str(request.GET['id'])] ={
+        'id':request.GET['pid'],
+        'pid':request.GET['pid'],
+        'image':request.GET['image'],
         'title':request.GET['title'],
         'qty':request.GET['qty'],
         'price':request.GET['price'],

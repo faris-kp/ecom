@@ -822,10 +822,19 @@
                                             <div class="product-card__availability">Availability: <span
                                                     class="text-success">In Stock</span></div>
                                             <div class="product-card__prices">${{ p.price}}</div>
+                                            <div class="product__prices_123">$<span class="product__prices-{{ p.id }}">{{ p.price }}</span></div>
                                             <div class="product-card__prices" style="color: #888;">${{ p.old_price }}</div>
-                                            <div class="product-card__buttons"><button
-                                                    class="btn btn-primary product-card__addtocart"
-                                                    type="button">Add To Cart</button>
+                                            <input id="product-quantity"
+                                                    class="product-quantity-{{ p.id }}"
+                                                    type="hidden"  value="1">
+                                        <input type="hidden" value="{{ p.pid }}"  class="product-pid-{{ p.id }}" id="" name="">
+                                        <input type="hidden" value="{{ p.image.url }}" class="product-image-{{ p.id }}" id="" name="">
+                                        <input type="hidden" value="{{ p.id }}"  class="product-id-{{ p.id }}" id="" name="">
+                                        <input type="hidden" value="{{ p.title }}" class="product-title-{{ p.id }}" id="" name="">
+                                            <div class="product-card__buttons">
+                                                <button
+                                                    class="btn btn-primary product-card__addtocart add-to-cart-btn" id="add-to-cart-btn"   data-index="{{ p.id }}" type="button">Add To
+                                                    Cart</button>
                                                     <button class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist"
                                                     type="button"><svg width="16px" height="16px">
                                                         <use xlink:href="images/sprite.svg#wishlist-16"></use>
